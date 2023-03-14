@@ -6,24 +6,24 @@
 {% block content %}
     <main>
         <div>
-            <h1>My Tasks</h1>
+            <h1 class="show_my_tasks-h1">My Tasks</h1>
             {% if tasks %}
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Start date</th>
-                            <th>Due date</th>
-                            <th>Is completed</th>
+                <table class="show-my-tasks-table">
+                    <thead class="show-my-tasks-thead">
+                        <tr class="show-my-tasks-tr1">
+                            <th class="show-my-tasks-th">Name</th>
+                            <th class="show-my-tasks-th">Start date</th>
+                            <th class="show-my-tasks-th">Due date</th>
+                            <th class="show-my-tasks-th">Is completed</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="show-my-tasks-tbody">
                         {% for task in tasks %}
-                            <tr>
-                                <td>{{ task.name }}</td>
-                                <td>{{ task.start_date }}</td>
-                                <td>{{ task.due_date }}</td>
-                                <td>{{ task.is_completed|yesno:"yes,no" }}</td>
+                            <tr class="show-my-tasks-tr2">
+                                <td class="show-my-tasks-td">{{ task.name }}</td>
+                                <td class="show-my-tasks-td">{{ task.start_date }}</td>
+                                <td class="show-my-tasks-td">{{ task.due_date }}</td>
+                                <td class="show-my-tasks-td">{{ task.is_completed|yesno:"yes,no" }}</td>
                             </tr>
                         {% endfor %}
                     </tbody>
@@ -32,5 +32,8 @@
                 <p>You have no tasks</p>
             {% endif %}
         </div>
+        <p class="show-my-tasks-p"><br><br><br>
+        <button class="base-nav-button"><a href="{% url 'create_task' %}">Create A New Task</a></button>
+        </p>
     </main>
 {% endblock content %}
