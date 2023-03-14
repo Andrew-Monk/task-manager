@@ -112,3 +112,78 @@ footer {
     border-radius: 10px;
     text-align: center;
 }
+
+.list-project-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+.list-project-th, .list-project-td {
+    text-align: center;
+    padding: 8px;
+}
+
+.list-project-th {
+    background-color: #174C4F;
+    color: white;
+}
+
+.list-project-tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.list-project-a {
+    text-decoration: none;
+    color: #174C4F;
+    transition: color 0.2s ease-in-out;
+}
+
+.list-project-a:hover {
+    color: #ff4500;
+}
+
+.list-project-td-length, .list-project-h1,
+.list-project-p {
+    text-align: center;
+}
+
+.list-project-h1 {
+    font-size: 2.5rem;
+    color: #174C4F;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .list-project-h1 {
+    background: linear-gradient(to right, #FF416C, #FF4B2B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+  }
+
+  .list-project-h1 {
+    position: relative;
+  }
+  .list-project-h1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #FF4B2B;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+  }
+  .list-project-h1:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  Add a shadow effect to the title:
+  css
+  Copy code
+  .list-project-h1 {
+    text-shadow: 2px 2px 2px #FF4B2B;
+  }
