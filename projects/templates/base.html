@@ -19,7 +19,7 @@
             <div class="base-nav-bar">
                 <div class="base-logo">
                     <!-- this is the first div for the image -->
-                    <img class="base-logo-image" src="{% static 'team16logo.png' %}" alt="country club looking logo">
+                    <a href="{% url 'list_projects' %}"><img class="base-logo-image" src="{% static 'team16logo.png' %}" alt="country club looking logo"></a>
                 </div>
                 <div>
                     <!-- keep this section blank for the grid -->
@@ -37,12 +37,12 @@
                             <button class="base-nav-button"><a href="{% url 'logout' %}">Logout</a></button>
                         </li>
                     {% else %}
-                        <li>
+                        <!-- <li>
                             <button class="base-nav-button"><a href="{% url 'login' %}">Login</a></button>
-                        </li>
-                        <li>
+                        </li> -->
+                        <!-- <li>
                             <button class="base-nav-button"><a href="{% url 'signup' %}">Signup</a></button>
-                        </li>
+                        </li> -->
                     {% endif %}
                 </ul>
                 </div>

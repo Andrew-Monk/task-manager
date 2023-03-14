@@ -1,4 +1,6 @@
-
+*{
+    font-family: 'Playfair Display', serif;
+}
 
 html {
     height: 100%
@@ -38,14 +40,20 @@ a {
     text-decoration: none;
 }
 
+a:visited {
+    color: inherit;
+}
+
 
 footer {
     background-color: #174C4F;
     margin-top: auto;
     padding: 2em;
+    border-top: 2px solid black;
 }
 
-.base-footer-grid {
+.base-footer-grid, .login-grid, .signup-grid,
+.list-project-div {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
@@ -81,4 +89,26 @@ footer {
 .base-nav-button:active {
 	position:relative;
 	top:1px;
+}
+
+.login-h1, .signup-h1 {
+    color: #2d3436;
+    text-align: center;
+}
+
+.login-form, .signup-form {
+    text-align: center;
+    color: #2d3436;
+}
+
+.login-p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #333;
+    background-color: #f7f7f7;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0px 0px 10px #ddd;
+    border-radius: 10px;
+    text-align: center;
 }

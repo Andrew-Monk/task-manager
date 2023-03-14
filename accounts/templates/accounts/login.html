@@ -5,13 +5,41 @@
 {% endblock title %}
 {% block content %}
     <main>
-        <div>
-            <h1>Login</h1>
-            <form method="post">
+        <div class="login-grid">
+            <div>1</div>
+            <div>
+            <h1 class="login-h1">Task Manager</h1>
+            <form class="login-form" method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button>Submit</button>
+                <button class="base-nav-button">Submit</button>
             </form>
+            <p class="login-p">
+                Welcome to Team 16's premium task manager, the ultimate solution to your
+                productivity needs. Our platform is designed to help you streamline your
+                workflow, increase efficiency, and stay on top of your game.
+                With a seamless user experience and intuitive interface, you'll wonder
+                how you ever managed without it.<br><br>
+
+                Sign up today and receive 30 days of premium features with no ads,
+                giving you access to exclusive tools and functionalities that will revolutionize
+                the way you work. Our innovative task management system allows you to effortlessly
+                organize your tasks, delegate responsibilities,
+                and track progress towards your goals.<br><br>
+
+                We believe that investing in yourself is the key to success,
+                which is why we offer a variety of premium plans to fit your
+                unique needs and budget. By upgrading to a premium account, you'll
+                unlock even more powerful features that will take your productivity
+                to the next level.<br><br>
+
+                Don't settle for mediocre task managers that only scratch the surface
+                of what's possible. Join Team 16 and experience the best
+                task manager ever created.<br><br>
+                <button class="base-nav-button"><a href="{% url 'signup' %}">Signup Free 30 Days</a></button>
+            </p>
+            </div>
+            <div>3</div>
         </div>
     </main>
 {% endblock content %}
