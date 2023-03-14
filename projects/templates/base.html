@@ -11,7 +11,7 @@
             {% block title %}
             {% endblock title %}
         </title>
-        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <link id="theme-stylesheet" rel="stylesheet" href="{% static 'css/styles.css' %}">
     </head>
     <body>
         <header>
@@ -22,6 +22,7 @@
                     <a href="{% url 'list_projects' %}"><img class="base-logo-image" src="{% static 'team16logo.png' %}" alt="country club looking logo"></a>
                 </div>
                 <div>
+                <button id="theme-switcher">Toggle Dark Mode</button>
                     <!-- keep this section blank for the grid -->
                 </div>
                 <ul class="base-nav-links">
@@ -58,5 +59,24 @@
                 <div class="base-color-yellow">Contact us in room 16 for business propositions</div>
             </div>
         </footer>
+
+          <script>
+            document.getElementById('theme-switcher').addEventListener('click', function() {
+                var themeStylesheet = document.getElementById('theme-stylesheet');
+                if (themeStylesheet.getAttribute('href') == '{% static "css/styles.css" %}') {
+                    themeStylesheet.setAttribute('href', '{% static "css/dark-mode.css" %}');
+                    localStorage.setItem('theme', 'dark');
+            }   else {
+                themeStylesheet.setAttribute('href', '{% static "css/styles.css" %}');
+                localStorage.setItem('theme', 'light');
+            }
+            });
+
+            // Set theme based on user preference
+            if (localStorage.getItem('theme') === 'dark') {
+                document.getElementById('theme-stylesheet').setAttribute('href', '{% static "css/dark-mode.css" %}');
+            }
+            </script>
+
     </body>
 </html>
