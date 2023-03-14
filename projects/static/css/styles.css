@@ -1,0 +1,262 @@
+*{
+    font-family: 'Playfair Display', serif;
+}
+
+html {
+    height: 100%
+}
+
+body {
+    background-color: #F2F2F0;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    margin: 0;
+}
+
+.base-nav-bar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 5px;
+    grid-row-gap: 0px;
+    border-bottom: 2px solid black;
+    background-color: #174C4F;
+    overflow: hidden;
+    }
+
+
+.base-logo-image {
+    width: 275px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.base-nav-links {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: inherit;
+}
+
+
+footer {
+    background-color: #174C4F;
+    margin-top: auto;
+    padding: 2em;
+    border-top: 2px solid black;
+}
+
+.base-footer-grid, .login-grid, .signup-grid,
+.list-project-div {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 5px;
+    grid-row-gap: 0px;
+}
+
+.base-color-yellow {
+    color: #FFE184;
+    text-align: center;
+}
+
+.base-nav-button {
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+	background-color:#ededed;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#777777;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+.base-nav-button:hover {
+	background:linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+	background-color:#dfdfdf;
+}
+.base-nav-button:active {
+	position:relative;
+	top:1px;
+}
+
+.login-h1, .signup-h1 {
+    color: #2d3436;
+    text-align: center;
+}
+
+.login-form, .signup-form {
+    text-align: center;
+    color: #2d3436;
+}
+
+.login-p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #333;
+    background-color: #f7f7f7;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0px 0px 10px #ddd;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.list-project-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+.list-project-th, .list-project-td {
+    text-align: center;
+    padding: 8px;
+}
+
+.list-project-th {
+    background-color: #174C4F;
+    color: white;
+}
+
+.list-project-tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.list-project-a {
+    text-decoration: none;
+    color: #174C4F;
+    transition: color 0.2s ease-in-out;
+}
+
+.list-project-a:hover {
+    color: #ff4500;
+}
+
+.list-project-td-length, .list-project-h1,
+.list-project-p {
+    text-align: center;
+}
+
+.list-project-h1 {
+    font-size: 2.5rem;
+    color: #174C4F;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+.list-project-h1 {
+    background: linear-gradient(to right, #2d3436, #174C4F);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: wait;
+}
+
+.list-project-h1 {
+    position: relative;
+}
+
+.list-project-h1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #174C4F;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+.list-project-h1:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.list-project-h1 {
+    text-shadow: 2px 2px 2px #174C4F;
+}
+
+/* show_my_tasks html */
+
+.show_my_tasks-h1 {
+    font-size: 2.5rem;
+    color: #174C4F;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.show-my-tasks-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.show-my-tasks-th,
+.show-my-tasks-td {
+    text-align: center;
+    padding: 8px;
+}
+
+.show-my-tasks-th {
+    background-color: #174C4F;
+    color: white;
+}
+
+.show-my-tasks-tr1 {
+    background-color: #FF416C;
+    color: white;
+}
+
+.show-my-tasks-tr2:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.show-my-tasks-p {
+    text-align: center;
+}
+
+/* .paid-advert-coffee, .paid-advert-cost {
+    max-width: 100%;
+    max-height: auto;
+    display: block;
+    margin: 0;
+    padding: 10px 0;
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    transform: scale(1.05);
+    position: sticky;
+    top: 20px;
+    z-index: 1;
+} */
+
+.paid-advert-coffee, .paid-advert-cost {
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+    margin: 20px auto;
+    /* padding: 10px 0; */
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    /* transform: scale(1.05); */
+    position: sticky;
+    top: 20px;
+    z-index: 1;
+    overflow: hidden;
+    justify-items: center;
+}
