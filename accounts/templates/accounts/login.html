@@ -1,12 +1,15 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}
-    Login
+   Login
 {% endblock title %}
 {% block content %}
     <main>
         <div class="login-grid">
-            <div>1</div>
+            <div>
+            <img class="paid-advert-coffee" src="{% static 'caffeinating16.png' %}" alt="coffee makes you buy this app">
+            </div>
             <div>
             <h1 class="login-h1">Task Manager</h1>
             <form class="login-form" method="post">
@@ -36,10 +39,12 @@
                 Don't settle for mediocre task managers that only scratch the surface
                 of what's possible. Join Team 16 and experience the best
                 task manager ever created.<br><br>
-                <button class="base-nav-button"><a href="{% url 'signup' %}">Signup Free 30 Days</a></button>
+                <button class="base-nav-button"><a href="{% url 'signup' %}">Sign Up Free 30 Days</a></button>
             </p>
             </div>
-            <div>3</div>
+            <div>
+                <img class="paid-advert-cost" src="{% static 'payment16.png' %}" alt="monthly app cost">
+            </div>
         </div>
     </main>
 {% endblock content %}
