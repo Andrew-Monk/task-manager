@@ -3,40 +3,60 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>
+        <title>Team 16
             {% block title %}
             {% endblock title %}
         </title>
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     </head>
     <body>
         <header>
             <nav>
-                <ul>
+            <div class="base-nav-bar">
+                <div class="base-logo">
+                    <!-- this is the first div for the image -->
+                    <a href="{% url 'list_projects' %}"><img class="base-logo-image" src="{% static 'team16logo.png' %}" alt="country club looking logo"></a>
+                </div>
+                <div>
+                    <!-- keep this section blank for the grid -->
+                </div>
+                <ul class="base-nav-links">
+                    <div>
                     {% if user.is_authenticated %}
                         <li>
-                            <a href="{% url 'show_my_tasks' %}">My tasks</a>
+                            <button class="base-nav-button"><a href="{% url 'show_my_tasks' %}">My tasks</a></button>
                         </li>
                         <li>
-                            <a href="{% url 'list_projects' %}">My projects</a>
+                            <button class="base-nav-button"><a href="{% url 'list_projects' %}">My projects</a></button>
                         </li>
                         <li>
-                            <a href="{% url 'logout' %}">Logout</a>
+                            <button class="base-nav-button"><a href="{% url 'logout' %}">Logout</a></button>
                         </li>
                     {% else %}
-                        <li>
-                            <a href="{% url 'login' %}">Login</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'signup' %}">Signup</a>
-                        </li>
+                        <!-- <li>
+                            <button class="base-nav-button"><a href="{% url 'login' %}">Login</a></button>
+                        </li> -->
+                        <!-- <li>
+                            <button class="base-nav-button"><a href="{% url 'signup' %}">Signup</a></button>
+                        </li> -->
                     {% endif %}
                 </ul>
+                </div>
+            </div>
             </nav>
         </header>
         {% block content %}
         {% endblock content %}
+        <footer>
+            <div class="base-footer-grid">
+                <div class="base-color-yellow">Copyright 2023</div>
+                <div class="base-color-yellow">Task Manager<br>Hack Reactor</div>
+                <div class="base-color-yellow">Contact us in room 16 for business propositions</div>
+            </div>
+        </footer>
     </body>
 </html>

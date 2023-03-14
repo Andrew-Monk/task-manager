@@ -5,26 +5,25 @@
 {% endblock title %}
 {% block content %}
     <main>
+        <div class="list-project-div">
+        <div>1</div>
         <div>
-            <h1>My Projects</h1>
-            <p>
-                <a href="{% url 'create_project' %}">Create a new project</a>
-            </p>
+            <h1 class="list-project-h1">My Projects</h1>
             {% if projects %}
-                <table>
+                <table class="list-project-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
+                            <th class="list-project-th">Name</th>
                             <th>Number of tasks</th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for project in projects %}
                             <tr>
-                                <td>
-                                    <a href="{% url 'show_project' project.id %}">{{ project.name }}</a>
+                                <td class="list-project-td">
+                                    <a class="list-project-a" href="{% url 'show_project' project.id %}">{{ project.name }}</a>
                                 </td>
-                                <td>{{ project.tasks.all|length }}</td>
+                                <td class="list-project-td-length">{{ project.tasks.all|length }}</td>
                             </tr>
                         {% endfor %}
                     </tbody>
@@ -32,6 +31,11 @@
             {% else %}
                 <p>You are not assigned to any projects</p>
             {% endif %}
+            <p class="list-project-p"><br><br><br>
+                <button class="base-nav-button"><a href="{% url 'create_project' %}">Create A New Project</a></button>
+            </p>
+        </div>
+        <div>3</div>
         </div>
     </main>
 {% endblock content %}
