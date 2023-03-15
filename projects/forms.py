@@ -23,6 +23,6 @@ class FeedbackForm(forms.ModelForm):
         labels = {
             'name': 'Name',
             'email': 'Email',
-            'generalfb': 'If you have any feedback on our services, we would love to hear from you!',
+            'generalfb': 'Feedback',
             'promotion': 'Would you be interested in receiving newsletters about our product and other promotional deals?',
         }

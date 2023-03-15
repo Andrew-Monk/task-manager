@@ -56,7 +56,12 @@
             <div class="base-footer-grid">
                 <div class="base-color-yellow">Copyright 2023</div>
                 <div class="base-color-yellow">Task Manager<br>Hack Reactor</div>
-                <div class="base-color-yellow">Contact us in room 16 for business propositions</div>
+                <div class="base-color-yellow">
+                    <p>Contact us in room 16 for business propositions</p>
+                    {% if user.is_authenticated %}
+                        <p><a href="{% url 'feedback' %}">Feedback Form</a></p>
+                    {% endif %}
+                </div>
             </div>
         </footer>
           <script>

@@ -43,13 +43,16 @@ def create_project(request):
     }
     return render(request, "projects/create_project.html", context)
 
+def thank_you(request):
+    return render(request, "projects/thank_you.html")
+
 @login_required
 def feedback_form(request):
     if request.method == "POST":
         form = FeedbackForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("projects/thank_you.html")
+            return redirect("thank_you")
     else:
         form = FeedbackForm()
     context = {
