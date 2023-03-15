@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from projects.models import Project
 from django.contrib.auth.decorators import login_required
-from projects.forms import ProjectForm
+from projects.forms import ProjectForm, FeedbackForm
 
 # Create your views here.
 
@@ -42,3 +42,17 @@ def create_project(request):
         "form": form,
     }
     return render(request, "projects/create_project.html", context)
+
+@login_required
+def feedback_form(request):
+    if request.method == "POST":
+        form = FeedbackForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("projects/thank_you.html")
+    else:
+        form = FeedbackForm()
+    context = {
+        "form": form,
+    }
+    return render(request, "projects/send_feedback.html", context)

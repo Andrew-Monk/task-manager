@@ -1,5 +1,5 @@
 from django.contrib import admin
-from projects.models import Project
+from projects.models import Project, Feedback
 
 # Register your models here.
 
@@ -10,4 +10,14 @@ class ProjectAdmin(admin.ModelAdmin):
         "name",
         "description",
         "owner",
+    )
+
+
+@admin.register(Feedback)
+class FeedbackAdmin(admin.ModelAdmin):
+    list_display = (
+        "name",
+        "email",
+        "generalfb",
+        "promotion",
     )
