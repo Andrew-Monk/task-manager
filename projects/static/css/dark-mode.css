@@ -54,12 +54,13 @@ footer {
 }
 
 .base-footer-grid, .login-grid, .signup-grid,
-.list-project-div {
+.list-project-div, .show-project-div {
     display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 1fr;
     grid-column-gap: 5px;
     grid-row-gap: 0px;
+
 }
 
 .base-color-yellow {
@@ -93,7 +94,7 @@ footer {
 }
 
 .login-h1, .signup-h1 {
-    color: #2d3436;
+    color: #f1f1f1;
     text-align: center;
 }
 
@@ -105,11 +106,11 @@ footer {
 .login-p {
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
-    color: #333;
-    background-color: #f7f7f7;
+    color: #f2f2f2;
+    background-color: #6b6262;
     padding: 20px;
     margin: 20px 0;
-    box-shadow: 0px 0px 10px #ddd;
+    box-shadow: 0px 0px 10px #c0b9b9;
     border-radius: 10px;
     text-align: center;
 }
@@ -122,6 +123,10 @@ footer {
 .list-project-th, .list-project-td {
     text-align: center;
     padding: 8px;
+}
+
+.list-project-td, .list-project-td-length {
+    color: #f1f1f1;
 }
 
 .list-project-th {
@@ -150,14 +155,14 @@ footer {
 
 .list-project-h1 {
     font-size: 2.5rem;
-    color: #174C4F;
+    color: #b6d8da;
     text-align: center;
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
 
 .list-project-h1 {
-    background: linear-gradient(to right, #2d3436, #174C4F);
+    background: linear-gradient(to right, #728286, #c3e8ea);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     cursor: wait;
@@ -174,7 +179,7 @@ footer {
     bottom: 0;
     width: 100%;
     height: 3px;
-    background-color: #174C4F;
+    background-color: #96a9aa;
     transform: scaleX(0);
     transform-origin: bottom right;
     transition: transform 0.3s ease-out;
@@ -268,4 +273,30 @@ body {
 
 a {
     color: #90caf9
+}
+
+#theme-switcher {
+    background-image: linear-gradient(45deg, #ff512f, #dd2476);
+    border: 2px solid #dd2476;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+#theme-switcher:hover {
+    background-image: linear-gradient(45deg, #dd2476, #ff512f);
+    border-color: #ff512f;
+}
+
+.theme-switch-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Adjust the height according to your preference */
 }

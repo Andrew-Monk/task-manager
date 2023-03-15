@@ -54,9 +54,9 @@ footer {
 }
 
 .base-footer-grid, .login-grid, .signup-grid,
-.list-project-div {
+.list-project-div, .show-project-div {
     display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 1fr;
     grid-column-gap: 5px;
     grid-row-gap: 0px;
@@ -259,4 +259,30 @@ footer {
     z-index: 1;
     overflow: hidden;
     justify-items: center;
+}
+
+#theme-switcher {
+    background-image: linear-gradient(45deg, #00c6ff, #0072ff);
+    border: 2px solid #0072ff;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+
+  #theme-switcher:hover {
+    background-image: linear-gradient(45deg, #0072ff, #00c6ff);
+    border-color: #00c6ff;
+  }
+
+  .theme-switch-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Adjust the height according to your preference */
 }

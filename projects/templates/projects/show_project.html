@@ -5,11 +5,10 @@
 {% endblock title %}
 {% block content %}
     <main>
-        <div>
+        <div class="show-project-div">
+            <div>1</div>
+            <div>
             <h1>{{ project.name }}</h1>
-            <p>
-                <a href="{% url 'create_task' %}">Create a new task</a>
-            </p>
             <p>{{ project.description }}</p>
             <h2>Tasks</h2>
             {% if tasks %}
@@ -38,6 +37,11 @@
             {% else %}
                 <p>This project has no tasks</p>
             {% endif %}
+            <p>
+                <a href="{% url 'create_task' %}">Create a new task</a>
+            </p>
+            </div>
+            <div>3</div>
         </div>
     </main>
 {% endblock content %}
