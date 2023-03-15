@@ -54,7 +54,8 @@ footer {
 }
 
 .base-footer-grid, .login-grid, .signup-grid,
-.list-project-div, .show-project-div {
+.list-project-div, .show-project-div, .create-task-grid,
+.create-project-grid {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 1fr;
@@ -225,7 +226,13 @@ footer {
 }
 
 .show-my-tasks-tr2:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #383434;
+    color: white;
+}
+
+.show-my-tasks-tr2:nth-child(odd) {
+    background-color: #100d0d;
+    color: white;
 }
 
 .show-my-tasks-p {
@@ -259,7 +266,7 @@ footer {
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     /* transform: scale(1.05); */
-    position: sticky;
+    /* position: fixed; */
     top: 20px;
     z-index: 1;
     overflow: hidden;
@@ -299,4 +306,184 @@ a {
     justify-content: center;
     align-items: center;
     height: 100%; /* Adjust the height according to your preference */
+}
+
+.show-project-main {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #eee;
+    line-height: 1.5;
+    background-color: #222;
+  }
+
+  .show-project-div {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    gap: 20px;
+  }
+
+  .show-project-div1 {
+    padding: 2rem;
+    background-color: #2e2e2e;
+    border-radius: 10px;
+  }
+
+  .show-project-h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .show-project-p {
+    margin-bottom: 1rem;
+  }
+
+  .show-project-h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .show-project-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .show-project-th,
+  .show-project-td {
+    padding: 1rem;
+    text-align: left;
+    border: 1px solid #444;
+  }
+
+  .show-project-thead {
+    background-color: #333;
+  }
+
+  .show-project-tbody .show-project-tr2:nth-child(even) {
+    background-color: #333;
+  }
+
+  .show-project-no-tasks {
+    margin-bottom: 1rem;
+  }
+
+  .show-project-button {
+    background-color: #0072ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+
+
+
+  .create-task-main {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #eee;
+    line-height: 1.5;
+    background-color: #222;
+  }
+
+  .create-task-grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .create-task-h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .create-task-form {
+    background-color: #2e2e2e;
+    padding: 2rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .create-task-form p {
+    margin-bottom: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .create-task-button {
+    background-color: #0072ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .create-task-button:hover {
+    background-color: #0056b3;
+  }
+
+
+
+  .dinwarz-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #2c2c2c;
+    border-radius: 5px;
+}
+
+.dinwarz-input-fields {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.dinwarz-person {
+    width: 45%;
+}
+
+.dinwarz-person-title {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.dinwarz-name-input,
+.dinwarz-food-input {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #666;
+    border-radius: 3px;
+    background-color: #444;
+    color: #fff;
+}
+
+.dinwarz-button {
+    display: block;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.dinwarz-button:hover {
+    background-color: #45a049;
+}
+
+.dinwarz-result {
+    margin-top: 20px;
+    font-size: 1.2em;
+    text-align: center;
+    color: #fff;
 }

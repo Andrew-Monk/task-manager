@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}DinWarz{% endblock title %}
+{% block content %}
+    <div class="dinwarz-container">
+        <div class="dinwarz-input-fields">
+            <div class="dinwarz-person">
+                <h3 class="dinwarz-person-title">Person 1</h3>
+                <input type="text" id="name1" class="dinwarz-name-input" placeholder="Name">
+                <input type="text" id="food1" class="dinwarz-food-input" placeholder="Food 1">
+                <input type="text" id="food2" class="dinwarz-food-input" placeholder="Food 2">
+                <input type="text" id="food3" class="dinwarz-food-input" placeholder="Food 3">
+            </div>
+            <div class="dinwarz-person">
+                <h3 class="dinwarz-person-title">Person 2</h3>
+                <input type="text" id="name2" class="dinwarz-name-input" placeholder="Name">
+                <input type="text" id="food4" class="dinwarz-food-input" placeholder="Food 1">
+                <input type="text" id="food5" class="dinwarz-food-input" placeholder="Food 2">
+                <input type="text" id="food6" class="dinwarz-food-input" placeholder="Food 3">
+            </div>
+        </div>
+        <button class="dinwarz-button" onclick="pickDinner()">Pick Dinner!</button>
+        <div class="dinwarz-result" id="result"></div>
+    </div>
+
+    <script>
+        function pickDinner() {
+            const name1 = document.getElementById('name1').value.trim() || 'Person 1';
+            const name2 = document.getElementById('name2').value.trim() || 'Person 2';
+
+            const foodInputs = [
+                document.getElementById('food1'),
+                document.getElementById('food2'),
+                document.getElementById('food3'),
+                document.getElementById('food4'),
+                document.getElementById('food5'),
+                document.getElementById('food6')
+            ];
+
+            const foods = foodInputs.map(input => input.value.trim()).filter(value => value !== '');
+
+            if (foods.length < 2) {
+                alert('Please enter at least two food options.');
+                return;
+            }
+
+            const randomIndex = Math.floor(Math.random() * foods.length);
+            const result = document.getElementById('result');
+            result.textContent = '';
+
+            const winningFood = foods[randomIndex];
+            const person = randomIndex < 3 ? name1 : name2;
+
+            let counter = 0;
+            const animation = setInterval(() => {
+                result.textContent = `Choosing... ${foods[counter % foods.length]}`;
+                counter++;
+                if (counter > 20) {
+                    clearInterval(animation);
+                    result.textContent = `The winning food is: ${winningFood} (${person}'s choice)`;
+                }
+            }, 100);
+        }
+    </script>
+{% endblock content %}
