@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+About Us
+{% endblock title %}
+
+{% block content %}
+    <main>
+        <div>
+            <div>
+
+                <h1 class="contacts-title">Meet the Team!</h1>
+            </div>
+            <div class="contacts-list">
+                {% for contact in contacts %}
+                <div>
+                    <a href="{{ contact.link }}">
+                        <img class="contacts-image" src="{% static contact.image %}" alt="profile picture" width="200" height="300">
+                    </a>
+                    <div class="contacts-right">
+                        <a href="{{ contact.link }}">
+                            <h3>{{ contact.name }}</h3>
+                        </a>
+                        <h4>{{ contact.job_title }}</h4>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </main>
+
+{% endblock content %}
