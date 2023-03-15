@@ -23,6 +23,7 @@ def redirect_home(request):
 
 
 urlpatterns = [
+    path("contacts/", include("contacts.urls")),
     path("tasks/", include("tasks.urls")),
     path("accounts/", include("accounts.urls")),
     path("", redirect_home, name="home"),

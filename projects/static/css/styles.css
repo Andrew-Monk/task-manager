@@ -260,3 +260,29 @@ footer {
     overflow: hidden;
     justify-items: center;
 }
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.contact-h1 {
+    font-size: 2.5rem;
+    color: #174C4F;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.contact-image {
+    border-radius: 50px;
+}
+
+.contact-right {
+    text-align: center;
+}
