@@ -61,6 +61,7 @@ footer {
     grid-template-rows: 1fr;
     grid-column-gap: 5px;
     grid-row-gap: 0px;
+
 }
 
 .base-color-yellow {
@@ -94,7 +95,7 @@ footer {
 }
 
 .login-h1, .signup-h1 {
-    color: #2d3436;
+    color: #f1f1f1;
     text-align: center;
 }
 
@@ -106,11 +107,11 @@ footer {
 .login-p {
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
-    color: #333;
-    background-color: #f7f7f7;
+    color: #f2f2f2;
+    background-color: #6b6262;
     padding: 20px;
     margin: 20px 0;
-    box-shadow: 0px 0px 10px #ddd;
+    box-shadow: 0px 0px 10px #c0b9b9;
     border-radius: 10px;
     text-align: center;
 }
@@ -123,6 +124,10 @@ footer {
 .list-project-th, .list-project-td {
     text-align: center;
     padding: 8px;
+}
+
+.list-project-td, .list-project-td-length {
+    color: #f1f1f1;
 }
 
 .list-project-th {
@@ -151,14 +156,14 @@ footer {
 
 .list-project-h1 {
     font-size: 2.5rem;
-    color: #174C4F;
+    color: #b6d8da;
     text-align: center;
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
 
 .list-project-h1 {
-    background: linear-gradient(to right, #2d3436, #174C4F);
+    background: linear-gradient(to right, #728286, #c3e8ea);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     cursor: wait;
@@ -175,7 +180,7 @@ footer {
     bottom: 0;
     width: 100%;
     height: 3px;
-    background-color: #174C4F;
+    background-color: #96a9aa;
     transform: scaleX(0);
     transform-origin: bottom right;
     transition: transform 0.3s ease-out;
@@ -221,7 +226,13 @@ footer {
 }
 
 .show-my-tasks-tr2:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #383434;
+    color: white;
+}
+
+.show-my-tasks-tr2:nth-child(odd) {
+    background-color: #100d0d;
+    color: white;
 }
 
 .show-my-tasks-p {
@@ -255,16 +266,25 @@ footer {
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     /* transform: scale(1.05); */
-    /* position: sticky; */
+    /* position: fixed; */
     top: 20px;
     z-index: 1;
     overflow: hidden;
     justify-items: center;
 }
 
+
+body {
+    background-color: #121212;
+}
+
+a {
+    color: #90caf9
+}
+
 #theme-switcher {
-    background-image: linear-gradient(45deg, #00c6ff, #0072ff);
-    border: 2px solid #0072ff;
+    background-image: linear-gradient(45deg, #ff512f, #dd2476);
+    border: 2px solid #dd2476;
     color: #ffffff;
     font-size: 16px;
     font-weight: bold;
@@ -274,14 +294,14 @@ footer {
     letter-spacing: 1px;
     border-radius: 4px;
     transition: all 0.3s ease;
-  }
+}
 
-  #theme-switcher:hover {
-    background-image: linear-gradient(45deg, #0072ff, #00c6ff);
-    border-color: #00c6ff;
-  }
+#theme-switcher:hover {
+    background-image: linear-gradient(45deg, #dd2476, #ff512f);
+    border-color: #ff512f;
+}
 
-  .theme-switch-wrapper {
+.theme-switch-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -290,8 +310,9 @@ footer {
 
 .show-project-main {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
+    color: #eee;
     line-height: 1.5;
+    background-color: #222;
   }
 
   .show-project-div {
@@ -302,7 +323,7 @@ footer {
 
   .show-project-div1 {
     padding: 2rem;
-    background-color: #f5f5f5;
+    background-color: #2e2e2e;
     border-radius: 10px;
   }
 
@@ -329,15 +350,15 @@ footer {
   .show-project-td {
     padding: 1rem;
     text-align: left;
-    border: 1px solid #ccc;
+    border: 1px solid #444;
   }
 
   .show-project-thead {
-    background-color: #e5e5e5;
+    background-color: #333;
   }
 
   .show-project-tbody .show-project-tr2:nth-child(even) {
-    background-color: #f5f5f5;
+    background-color: #333;
   }
 
   .show-project-no-tasks {
@@ -353,23 +374,14 @@ footer {
     cursor: pointer;
   }
 
-  .show-project-button a {
-    color: #fff;
-    text-decoration: none;
-  }
-
-  .show-project-button:hover {
-    background-color: #0056b3;
-  }
 
 
 
-/* styles.css (light mode) */
-
-.create-task-main {
+  .create-task-main {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
+    color: #eee;
     line-height: 1.5;
+    background-color: #222;
   }
 
   .create-task-grid {
@@ -386,7 +398,7 @@ footer {
   }
 
   .create-task-form {
-    background-color: #f5f5f5;
+    background-color: #2e2e2e;
     padding: 2rem;
     border-radius: 10px;
     display: flex;
@@ -418,12 +430,11 @@ footer {
 
 
 
-
   .dinwarz-container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #2c2c2c;
     border-radius: 5px;
 }
 
@@ -440,6 +451,7 @@ footer {
 .dinwarz-person-title {
     font-size: 1.2em;
     margin-bottom: 5px;
+    color: #fff;
 }
 
 .dinwarz-name-input,
@@ -448,8 +460,10 @@ footer {
     width: 100%;
     padding: 5px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #666;
     border-radius: 3px;
+    background-color: #444;
+    color: #fff;
 }
 
 .dinwarz-button {
@@ -471,4 +485,5 @@ footer {
     margin-top: 20px;
     font-size: 1.2em;
     text-align: center;
+    color: #fff;
 }
