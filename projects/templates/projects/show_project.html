@@ -4,40 +4,44 @@
     Project
 {% endblock title %}
 {% block content %}
-    <main>
-        <div>
-            <h1>{{ project.name }}</h1>
-            <p>
-                <a href="{% url 'create_task' %}">Create a new task</a>
-            </p>
-            <p>{{ project.description }}</p>
-            <h2>Tasks</h2>
+    <main class="show-project-main">
+        <div class="show-project-div">
+            <div></div>
+            <div class="show-project-div1">
+            <h1 class="show-project-h1">{{ project.name }}</h1>
+            <p class="show-project-p">{{ project.description }}</p>
+            <h2 class="show-project-h2">Tasks</h2>
             {% if tasks %}
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Assignee</th>
-                            <th>Start date</th>
-                            <th>Due date</th>
-                            <th>Is completed</th>
+                <table class="show-project-table">
+                    <thead class="show-project-thead">
+                        <tr class="show-project-tr">
+                            <th class="show-project-th">Name</th>
+                            <th class="show-project-th">Assignee</th>
+                            <th class="show-project-th">Start date</th>
+                            <th class="show-project-th">Due date</th>
+                            <th class="show-project-th">Is completed</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="show-project-tbody">
                         {% for task in tasks %}
-                            <tr>
-                                <td>{{ task.name }}</td>
-                                <td>{{ task.assignee.username }}</td>
-                                <td>{{ task.start_date }}</td>
-                                <td>{{ task.due_date }}</td>
-                                <td>{{ task.is_completed|yesno:'yes,no' }}</td>
+                            <tr class="show-project-tr2">
+                                <td class="show-project-td">{{ task.name }}</td>
+                                <td class="show-project-td">{{ task.assignee.username }}</td>
+                                <td class="show-project-td">{{ task.start_date }}</td>
+                                <td class="show-project-td">{{ task.due_date }}</td>
+                                <td class="show-project-td">{{ task.is_completed|yesno:'yes,no' }}</td>
                             </tr>
                         {% endfor %}
                     </tbody>
                 </table>
             {% else %}
-                <p>This project has no tasks</p>
+                <p class="show-project-no-tasks">This project has no tasks</p>
             {% endif %}
+            <p>
+                <button class="show-project-button"><a href="{% url 'create_task' %}">Create a new task</a></button>
+            </p>
+            </div>
+            <div></div>
         </div>
     </main>
 {% endblock content %}

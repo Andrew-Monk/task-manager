@@ -11,7 +11,7 @@
             {% block title %}
             {% endblock title %}
         </title>
-        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <link id="theme-stylesheet" rel="stylesheet" href="{% static 'css/styles.css' %}">
     </head>
     <body>
         <header>
@@ -21,7 +21,8 @@
                     <!-- this is the first div for the image -->
                     <a href="{% url 'list_projects' %}"><img class="base-logo-image" src="{% static 'team16logo.png' %}" alt="country club looking logo"></a>
                 </div>
-                <div>
+                <div class="theme-switch-wrapper">
+                <button id="theme-switcher">Theme switch</button>
                     <!-- keep this section blank for the grid -->
                 </div>
                 <ul class="base-nav-links">
@@ -53,10 +54,33 @@
         {% endblock content %}
         <footer>
             <div class="base-footer-grid">
-                <div class="base-color-yellow">Copyright 2023</div>
-                <div class="base-color-yellow">Task Manager<br>Hack Reactor</div>
-                <div class="base-color-yellow"><a href="{% url 'list_contacts' %}">Meet the Team</a></div>
+                <div class="base-color-yellow">Copyright <br><br>2023</div>
+                <div class="base-color-yellow">Task Manager<br><br>Hack Reactor</div>
+                <div class="base-color-yellow">
+                    <p><a href="{% url 'list_contacts' %}">Meet the team!</a></p>
+                    {% if user.is_authenticated %}
+                        <p><a href="{% url 'feedback' %}">Feedback Form</a></p>
+                    {% endif %}
+                </div>
             </div>
         </footer>
+          <script>
+            document.getElementById('theme-switcher').addEventListener('click', function() {
+                var themeStylesheet = document.getElementById('theme-stylesheet');
+                if (themeStylesheet.getAttribute('href') == '{% static "css/styles.css" %}') {
+                    themeStylesheet.setAttribute('href', '{% static "css/dark-mode.css" %}');
+                    localStorage.setItem('theme', 'dark');
+            }   else {
+                themeStylesheet.setAttribute('href', '{% static "css/styles.css" %}');
+                localStorage.setItem('theme', 'light');
+            }
+            });
+
+            // Set theme based on user preference
+            if (localStorage.getItem('theme') === 'dark') {
+                document.getElementById('theme-stylesheet').setAttribute('href', '{% static "css/dark-mode.css" %}');
+            }
+            </script>
+
     </body>
 </html>
