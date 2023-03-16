@@ -281,8 +281,18 @@ footer {
 
 .contact-image {
     border-radius: 50px;
+    text-align: center;
+}
+
+.contact-image:hover {
+    position: relative;
+    top: -5px;
 }
 
 .contact-right {
     text-align: center;
+}
+
+.contact-h3 {
+    color: #174C4F;
 }

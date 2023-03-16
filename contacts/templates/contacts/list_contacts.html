@@ -14,14 +14,14 @@
     <div class="contact-grid">
         {% for contact in contacts %}
         <div>
-            <a href="{{ contact.link }}">
+            <a href="{{ contact.link }}" target="_blank">
                 <img class="contact-image" src="{% static contact.image %}" alt="team_photo" width="200">
             </a>
             <div class="contact-right">
                 <a href="{{ contact.link }}">
-                    <h3>{{ contact.name }}</h3>
+                    <h3 class="contact-h3">{{ contact.name }}</h3>
                 </a>
-                <h4>{{ contact.job_title }}</h4>
+                <h4 class="contact-h3">{{ contact.job_title }}</h4>
             </div>
         </div>
         {% endfor %}
