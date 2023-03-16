@@ -12,7 +12,7 @@ def toggle_task_completion(request, task_id):
     task = Task.objects.get(id=task_id, assignee=request.user)
     task.is_completed = not task.is_completed
     task.save()
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+    return HttpResponseRedirect(request.META.get("HTTP_REFERER", "/"))
 
 
 @login_required
