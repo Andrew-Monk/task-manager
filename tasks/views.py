@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from tasks.forms import TaskForm
 from tasks.models import Task
+from notes.models import Note
 
 # Create your views here.
 

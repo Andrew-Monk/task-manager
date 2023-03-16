@@ -9,4 +9,5 @@ class NoteForm(forms.ModelForm):
             "title",
             "notes",
             "date",
+            "task"
         ]

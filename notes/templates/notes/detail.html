@@ -20,13 +20,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for notes in notes_object.all %}
+                        {% comment %} {% for notes in notes_object.all %} {% endcomment %}
                             <tr>
-                                <td class="list-project-td">{{ notes.title }}</td>
-                                <td class="list-project-td">{{ notes.notes }}</td>
-                                <td class="list-project-td">{{ notes.date }}</td>
+                                <td class="list-project-td">{{ notes_object.title }}</td>
+                                <td class="list-project-td">{{ notes_object.notes }}</td>
+                                <td class="list-project-td">{{ notes_object.date }}</td>
                             </tr>
-                        {% endfor %}
+                        {% comment %} {% endfor %} {% endcomment %}
                     </tbody>
                 </table>
             {% else %}
