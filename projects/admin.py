@@ -1,5 +1,5 @@
 from django.contrib import admin
-from projects.models import Project
+from projects.models import Project, Survey
 
 # Register your models here.
 
@@ -10,4 +10,13 @@ class ProjectAdmin(admin.ModelAdmin):
         "name",
         "description",
         "owner",
+    )
+
+
+@admin.register(Survey)
+class SurveyAdmin(admin.ModelAdmin):
+    list_display = (
+        "name",
+        "email",
+        "general_feedback",
     )

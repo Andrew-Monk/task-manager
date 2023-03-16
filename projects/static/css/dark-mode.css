@@ -487,3 +487,8 @@ a {
     text-align: center;
     color: #fff;
 }
+
+.image {
+    height: 40px;
+    width: 40px;
+  }

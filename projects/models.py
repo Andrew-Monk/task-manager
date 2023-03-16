@@ -16,3 +16,13 @@ class Project(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Survey(models.Model):
+    name = models.CharField(max_length=150)
+    email = models.EmailField()
+    feedback = models.TextField()
+    general_feedback = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.name

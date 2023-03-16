@@ -15,6 +15,7 @@
                             <th class="show-my-tasks-th">Start date</th>
                             <th class="show-my-tasks-th">Due date</th>
                             <th class="show-my-tasks-th">Is completed</th>
+                            <th class="show-my-tasks-th">Notes</th>
                         </tr>
                     </thead>
                     <tbody class="show-my-tasks-tbody">
@@ -24,6 +25,7 @@
                                 <td class="show-my-tasks-td">{{ task.start_date }}</td>
                                 <td class="show-my-tasks-td">{{ task.due_date }}</td>
                                 <td class="show-my-tasks-td">{{ task.is_completed|yesno:"yes,no" }}</td>
+                                <td class="show-my-tasks-td"><a href="{% url 'create_notes' %}"><img class="image" src="https://png.pngtree.com/png-clipart/20221028/ourmid/pngtree-cute-and-aesthetic-sticky-notes-png-image_6386294.png" alt="notepad"></a></td>
                             </tr>
                         {% endfor %}
                     </tbody>
