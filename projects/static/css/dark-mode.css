@@ -489,6 +489,7 @@ a {
     color: #fff;
 }
 
+<<<<<<< HEAD
 .rsp-p {
     background-color: #222222;
     color: #ffffff;
@@ -629,3 +630,9 @@ h3, h4 {
     margin-bottom: 2rem;
 }
 >>>>>>> ricky
+=======
+.image {
+    height: 40px;
+    width: 40px;
+  }
+>>>>>>> 7f97b8784fb89a152225cfd8580b8d42d97fc01b

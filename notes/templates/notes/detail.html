@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{notes_object.title}}
+{% endblock title %}
+
+{% block content %}
+    <main>
+        <div class="list-project-div">
+        <div>1</div>
+        <div>
+            <h1 class="list-project-h1">Notes</h1>
+            {% if notes_object %}
+                <table class="list-project-table">
+                    <thead>
+                        <tr>
+                            <th class="list-project-th">Title</th>
+                            <th class="list-project-th">Notes</th>
+                            <th class="list-project-th">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% comment %} {% for notes in notes_object.all %} {% endcomment %}
+                            <tr>
+                                <td class="list-project-td">{{ notes_object.title }}</td>
+                                <td class="list-project-td">{{ notes_object.notes }}</td>
+                                <td class="list-project-td">{{ notes_object.date }}</td>
+                            </tr>
+                        {% comment %} {% endfor %} {% endcomment %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>You have no notes</p>
+            {% endif %}
+            <p class="list-project-p"><br><br><br>
+                <button class="base-nav-button"><a href="{% url 'edit_notes' notes_object.id %}">Edit</a></button>
+            </p>
+        </div>
+        <div>3</div>
+        </div>
+    </main>
+{% endblock content %}

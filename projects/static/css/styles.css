@@ -601,4 +601,7 @@ h3, h4 {
     text-align: center;
     margin-top: 2rem;
     margin-bottom: 2rem;
+.image {
+  height: 40px;
+  width: 40px;
 }

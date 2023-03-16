@@ -1,6 +1,8 @@
-from django.db import models
-from projects.models import Project
 from django.conf import settings
+from django.db import models
+
+from notes.models import Note
+from projects.models import Project
 
 # Create your models here.
 
@@ -19,3 +21,18 @@ class Task(models.Model):
         on_delete=models.CASCADE,
         related_name="tasks",
     )
+    note = models.ForeignKey(
+        Note,
+        on_delete=models.CASCADE,
+        related_name="tasks",
+        null=True,
+    )
+
+    # notes = models.ForeignKey(
+    #     Note, on_delete=models.CASCADE,
+    #     related_name="notes",
+    #     null=True
+    # )
+
+    def __str__(self):
+        return self.name

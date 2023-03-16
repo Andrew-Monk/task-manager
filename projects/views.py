@@ -43,6 +43,7 @@ def create_project(request):
     }
     return render(request, "projects/create_project.html", context)
 
+<<<<<<< HEAD
 def thank_you(request):
     return render(request, "projects/thank_you.html")
 
@@ -59,3 +60,22 @@ def feedback_form(request):
         "form": form,
     }
     return render(request, "projects/send_feedback.html", context)
+=======
+
+@login_required
+def create_survey(request):
+    if request.method == "POST":
+        form = SurveyForm(request.POST)
+        if form.is_valid():
+            app = form.save(False)
+            app.owner = request.user
+            app.save()
+            return redirect("list_projects")
+    else:
+        form = SurveyForm()
+
+    context = {
+        "form": form,
+    }
+    return render(request, "projects/survey.html", context)
+>>>>>>> 7f97b8784fb89a152225cfd8580b8d42d97fc01b
