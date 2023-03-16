@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rock, Paper, Scissors</h1>
+    <p>Choose your move:</p>
+    <button onclick="play('rock')">Rock</button>
+    <button onclick="play('paper')">Paper</button>
+    <button onclick="play('scissors')">Scissors</button>
+    <h2 id="result"></h2>
+    <script>
+        function play(playerMove) {
+            const moves = ['rock', 'paper', 'scissors'];
+            const computerMove = moves[Math.floor(Math.random() * moves.length)];
+
+            if (playerMove === computerMove) {
+                document.getElementById('result').innerHTML = `You and the computer both chose ${playerMove}. It's a tie!`;
+            } else {
+                let win = false;
+
+                switch (playerMove) {
+                    case 'rock':
+                        win = computerMove === 'scissors';
+                        break;
+                    case 'paper':
+                        win = computerMove === 'rock';
+                        break;
+                    case 'scissors':
+                        win = computerMove === 'paper';
+                        break;
+                }
+
+                document.getElementById('result').innerHTML = win
+                    ? `You chose ${playerMove} and the computer chose ${computerMove}. You win!`
+                    : `You chose ${playerMove} and the computer chose ${computerMove}. You lose!`;
+            }
+        }
+    </script>
+</body>
+</html>
