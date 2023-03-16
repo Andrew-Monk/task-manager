@@ -505,3 +505,46 @@ footer {
   font-size: 1.5rem;
   color: #000000;
 }
+
+
+
+.num-guess-body {
+  background-color: #ffffff;
+  color: #000000;
+  text-align: center;
+  padding-left: 10%;
+}
+
+.num-guess-h1 {
+  font-family: Arial, sans-serif;
+  font-size: 2rem;
+}
+
+.num-guess-p, .num-guess-p1 {
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+}
+
+.num-guess-input {
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  padding: 5px;
+}
+
+.num-guess-button {
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  background-color: #f0f0f0;
+  border: 1px solid #cccccc;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.num-guess-button:hover {
+  background-color: #e0e0e0;
+}
+
+
+.login-form p{
+  color: rgb(24, 21, 21);
+}

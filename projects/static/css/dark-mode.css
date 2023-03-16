@@ -520,3 +520,57 @@ a {
     font-size: 1.5rem;
     color: #ffffff;
 }
+
+
+
+.num-guess-body {
+    background-color: #222222;
+    color: #ffffff;
+}
+
+.num-guess-h1, .num-guess-p {
+    font-family: Arial, sans-serif;
+    font-size: 2rem;
+    color: white;
+}
+
+.num-guess-p, .num-guess-p1 {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+}
+
+.num-guess-input {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    padding: 5px;
+    background-color: #333333;
+    color: #ffffff;
+    border: 1px solid #555555;
+}
+
+.num-guess-button {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    background-color: #444444;
+    border: 1px solid #555555;
+    padding: 5px;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.num-guess-button:hover {
+    background-color: #555555;
+}
+
+
+.login-form p{
+    color: #f1f1f1;
+  }
+
+.ttt-class {
+    color: #f1f1f1;
+}
+
+.div.cell {
+    color: white;
+}
