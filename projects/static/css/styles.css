@@ -286,3 +286,52 @@ footer {
     align-items: center;
     height: 100%; /* Adjust the height according to your preference */
 }
+
+.contacts-list {
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 22px;
+    grid-row-gap: 23px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.contacts-title {
+    font-size: 2.5rem;
+    color: #174c4f;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.contacts-image {
+    border-radius: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contacts-image:hover {
+    position: relative;
+    top: -5px;
+}
+
+.contacts-right {
+    text-align: center;
+}
+
+.list-contacts-h1 {
+    font-size: 2.5rem;
+    color: #174C4F;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+h3, h4 {
+    color: #174C4F;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
