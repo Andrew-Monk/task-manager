@@ -9,6 +9,106 @@
         <div class="login-grid">
             <div>
             <img class="paid-advert-coffee" src="{% static 'caffeinating16.png' %}" alt="coffee makes you buy this app">
+
+            {% comment %} number guessing game {% endcomment %}
+            <p class="num-guess-body">
+                <h1 class="num-guess-h1">Number Guessing Game</h1>
+    <p class="num-guess-p">Guess the number between 1 and 100:</p>
+    <input class="num-guess-input" type="number" id="guess" min="1" max="100">
+    <button class="num-guess-button" onclick="checkGuess()">Guess</button>
+    <p class="num-guess-p1" id="message"></p>
+    <script>
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let attempts = 0;
+
+        function checkGuess() {
+            let guess = document.getElementById("guess").value;
+            attempts++;
+
+            if (guess == randomNumber) {
+                document.getElementById("message").innerHTML = `Congratulations! You guessed the number in ${attempts} attempts!`;
+            } else if (guess < randomNumber) {
+                document.getElementById("message").innerHTML = "Too low! Try again.";
+            } else {
+                document.getElementById("message").innerHTML = "Too high! Try again.";
+            }
+        }
+    </script>
+            </p>
+    <style>
+        .game-board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 5px;
+        }
+
+        .cell {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+            border: 2px solid #000;
+            font-family: Arial, sans-serif;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+    </style>
+
+    <h1 class="ttt-class">Tic Tac Toe</h1>
+    <div class="game-board" id="game-board">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+    </div>
+
+    <script>
+        const gameBoard = document.getElementById("game-board");
+        const cells = Array.from(gameBoard.getElementsByClassName("cell"));
+        const board = Array(9).fill(null);
+        let currentPlayer = "X";
+        let gameOver = false;
+
+        gameBoard.addEventListener("click", (event) => {
+            if (!gameOver && event.target.classList.contains("cell")) {
+                const index = cells.indexOf(event.target);
+                if (board[index] === null) {
+                    board[index] = currentPlayer;
+                    event.target.textContent = currentPlayer;
+                    if (checkWinner(currentPlayer)) {
+                        alert(`${currentPlayer} wins!`);
+                        gameOver = true;
+                    } else if (board.every((cell) => cell !== null)) {
+                        alert("It's a tie!");
+                        gameOver = true;
+                    } else {
+                        currentPlayer = currentPlayer === "X" ? "O" : "X";
+                    }
+                }
+            }
+        });
+
+        function checkWinner(player) {
+            const winConditions = [
+                [0, 1, 2], [3, 4, 5], [6, 7, 8],
+                [0, 3, 6], [1, 4, 7], [2, 5, 8],
+                [0, 4, 8], [2, 4, 6]
+            ];
+
+            return winConditions.some((condition) =>
+                condition.every((index) => board[index] === player)
+            );
+        }
+    </script>
+
+
             </div>
             <div>
             <h1 class="login-h1">Task Manager</h1>
@@ -46,6 +146,44 @@
             <div>
                 <img class="paid-advert-cost" src="{% static 'payment16.png' %}" alt="monthly app cost">
                 <a href="{% url 'dinwarz' %}"><img class="paid-advert-cost" src="{% static 'dinwarz16.gif' %}" alt="monthly app cost"></a>
+{% comment %} rock paper scissors {% endcomment %}
+                <p class="rps-p">
+                    <h1 class="rps-h1">Rock, Paper, Scissors</h1>
+                    <p class="rsp-p">Choose your move:</p>
+                    <button class="rps-button" onclick="play('rock')">Rock</button>
+                    <button class="rps-button" onclick="play('paper')">Paper</button>
+                    <button class="rps-button" onclick="play('scissors')">Scissors</button>
+                    <h2 class="rps-h2" id="result"></h2>
+                    <script>
+                        function play(playerMove) {
+                            const moves = ['rock', 'paper', 'scissors'];
+                            const computerMove = moves[Math.floor(Math.random() * moves.length)];
+
+                            if (playerMove === computerMove) {
+                                document.getElementById('result').innerHTML = `You and the computer both chose ${playerMove}. It's a tie!`;
+                            } else {
+                                let win = false;
+
+                                switch (playerMove) {
+                                    case 'rock':
+                                        win = computerMove === 'scissors';
+                                        break;
+                                    case 'paper':
+                                        win = computerMove === 'rock';
+                                        break;
+                                    case 'scissors':
+                                        win = computerMove === 'paper';
+                                        break;
+                                }
+
+                                document.getElementById('result').innerHTML = win
+                                    ? `You chose ${playerMove} and the computer chose ${computerMove}. You win!`
+                                    : `You chose ${playerMove} and the computer chose ${computerMove}. You lose!`;
+                            }
+                        }
+                    </script>
+                </p>
+
             </div>
         </div>
     </main>

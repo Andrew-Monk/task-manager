@@ -488,30 +488,141 @@ a {
     color: #fff;
 }
 
+.rsp-p {
+    background-color: #222222;
+    color: #ffffff;
+}
 
+.rps-h1 {
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+.rps-button {
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.rps-button:hover {
+    background-color: #45a049;
+}
+
+.rps-h2 {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+
+
+.num-guess-body {
+    background-color: #222222;
+    color: #ffffff;
+}
+
+.num-guess-h1, .num-guess-p {
+    font-family: Arial, sans-serif;
+    font-size: 2rem;
+    color: white;
+}
+
+.num-guess-p, .num-guess-p1 {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+}
+
+.num-guess-input {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    padding: 5px;
+    background-color: #333333;
+    color: #ffffff;
+    border: 1px solid #555555;
+}
+
+.num-guess-button {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    background-color: #444444;
+    border: 1px solid #555555;
+    padding: 5px;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.num-guess-button:hover {
+    background-color: #555555;
+}
+
+
+.login-form p{
+    color: #f1f1f1;
+  }
+
+.ttt-class {
+    color: #f1f1f1;
+}
+
+.div.cell {
+    color: white;
+}
+
+  .flappy-title {
+    color: #f1f1f1;;
+  }
 .contacts-list {
-    display: grid;
+    display:grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 22px;
     grid-row-gap: 23px;
     padding-left: 40px;
     padding-right: 40px;
-  }
+}
 
 .contacts-title {
-  font-size: 2.5rem;
-  color: #174C4F;
-  text-align: center;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #174c4f;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .contacts-image {
-  border-radius: 50px;
+    border-radius: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+.contacts-image:hover {
+    position: relative;
+    top: -5px;
+}
 
 .contacts-right {
-  text-align: center;
+    text-align: center;
+}
+
+.list-contacts-h1 {
+    font-size: 2.5rem;
+    color: #174C4F;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+h3, h4 {
+    color: white;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }

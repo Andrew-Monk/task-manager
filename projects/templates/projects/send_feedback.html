@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Feedback
+{% endblock title %}
+{% block content %}
+    <main class="create-task-main">
+        <div class="create-task-grid">
+            <div></div>
+            <div>
+            <h1 class="create-task-h1">Feedback</h1>
+            <form class="create-task-form" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="create-task-button">Send</button>
+            </form>
+            </div>
+            <div></div>
+        </div>
+    </main>
+{% endblock content %}

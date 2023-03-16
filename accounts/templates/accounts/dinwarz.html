@@ -2,7 +2,110 @@
 {% load static %}
 {% block title %}DinWarz{% endblock title %}
 {% block content %}
-    <div class="dinwarz-container">
+
+<div class="flappy-container">
+    <h1 class="flappy-title">Flappy 16</h1>
+    <canvas id="flappyCanvas" class="flappy-canvas" width="480" height="320"></canvas>
+</div>
+
+<script>
+    const canvas = document.getElementById("flappyCanvas");
+    const ctx = canvas.getContext("2d");
+
+    let bird = {
+        x: 40,
+        y: canvas.height / 2,
+        vy: 0,
+        radius: 15
+    };
+
+    let pipes = [];
+    let pipeGap = 150;
+    let pipeWidth = 60;
+    let pipeSpeed = 2;
+
+    function drawBird() {
+        ctx.beginPath();
+        ctx.arc(bird.x, bird.y, bird.radius, 0, 2 * Math.PI);
+        ctx.fillStyle = "yellow";
+        ctx.fill();
+        ctx.closePath();
+    }
+
+    function drawPipes() {
+        for (let i = 0; i < pipes.length; i++) {
+            ctx.fillStyle = "green";
+            ctx.fillRect(pipes[i].x, 0, pipeWidth, pipes[i].y1);
+            ctx.fillRect(pipes[i].x, pipes[i].y2, pipeWidth, canvas.height - pipes[i].y2);
+        }
+    }
+
+    function updatePipes() {
+        if (pipes.length === 0 || pipes[pipes.length - 1].x < canvas.width - 200) {
+            let y1 = Math.random() * (canvas.height - pipeGap - 100) + 50;
+            let y2 = y1 + pipeGap;
+            pipes.push({ x: canvas.width, y1: y1, y2: y2 });
+        }
+
+        for (let i = 0; i < pipes.length; i++) {
+            pipes[i].x -= pipeSpeed;
+
+            if (pipes[i].x + pipeWidth < 0) {
+                pipes.splice(i, 1);
+                i--;
+            }
+        }
+    }
+
+    function updateBird() {
+        bird.vy += 0.09;
+        bird.y += bird.vy;
+    }
+
+    function checkCollision() {
+        if (bird.y - bird.radius < 0 || bird.y + bird.radius > canvas.height) {
+            return true;
+        }
+
+        for (let i = 0; i < pipes.length; i++) {
+            if (bird.x + bird.radius > pipes[i].x && bird.x - bird.radius < pipes[i].x + pipeWidth) {
+                if (bird.y - bird.radius < pipes[i].y1 || bird.y + bird.radius > pipes[i].y2) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    function gameLoop() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        drawBird();
+        drawPipes();
+        updatePipes();
+        updateBird();
+
+        if (checkCollision()) {
+            alert("Game over!");
+            bird.y = canvas.height / 2;
+            bird.vy = 0;
+            pipes = [];
+        } else {
+            requestAnimationFrame(gameLoop);
+        }
+    }
+
+    canvas.addEventListener("click", () => {
+        bird.vy = -3;
+    });
+
+    gameLoop();
+</script>
+
+{% comment %}
+
+<div class="dinwarz-container">
         <div class="dinwarz-input-fields">
             <div class="dinwarz-person">
                 <h3 class="dinwarz-person-title">Person 1</h3>
@@ -61,5 +164,6 @@
                 }
             }, 100);
         }
-    </script>
+    </script>  {% endcomment %}
+    <img class="din-warz-pic" src="{% static 'underconstruction16.png' %}" alt="underconstruction">
 {% endblock content %}

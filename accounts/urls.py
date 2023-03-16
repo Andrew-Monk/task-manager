@@ -7,5 +7,9 @@ urlpatterns = [
     path("signup/", signup_view, name="signup"),
     path("logout/", logout_view, name="logout"),
     path("login/", login_view, name="login"),
-    path("dinwarz/", TemplateView.as_view(template_name='accounts/dinwarz.html'), name='dinwarz'),
+    path(
+        "dinwarz/",
+        TemplateView.as_view(template_name="accounts/dinwarz.html"),
+        name="dinwarz",
+    ),
 ]

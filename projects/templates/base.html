@@ -54,12 +54,16 @@
         {% endblock content %}
         <footer>
             <div class="base-footer-grid">
-                <div class="base-color-yellow">Copyright 2023</div>
-                <div class="base-color-yellow">Task Manager<br>Hack Reactor</div>
-                <div class="base-color-yellow"><a href="{% url 'list_contacts' %}">Meet the Team</a></div>
+                <div class="base-color-yellow">Copyright <br><br>2023</div>
+                <div class="base-color-yellow">Task Manager<br><br>Hack Reactor</div>
+                <div class="base-color-yellow">
+                    <a href="{% url 'list_contacts' %}">Meet the team!</a><br><br>
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'feedback' %}">Feedback Form</a>
+                    {% endif %}
+                </div>
             </div>
         </footer>
-
           <script>
             document.getElementById('theme-switcher').addEventListener('click', function() {
                 var themeStylesheet = document.getElementById('theme-stylesheet');
