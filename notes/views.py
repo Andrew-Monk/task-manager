@@ -1,5 +1,6 @@
-from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import get_object_or_404, redirect, render
+
 from notes.forms import NoteForm
 from notes.models import Note
 
@@ -7,9 +8,9 @@ from notes.models import Note
 
 
 @login_required
-def show_notes(request, task):
-    print(task)
-    notes = Note.objects.filter(task=task)
+def show_notes(request, id):
+    print(id)
+    notes = get_object_or_404(Note, id=id)
     # notes.id
     context = {
         "notes_object": notes,
@@ -35,13 +36,13 @@ def create_notes(request):
 
 
 @login_required
-def edit_notes(request, name):
-    notes = get_object_or_404(Note, task=name)
+def edit_notes(request, id):
+    notes = get_object_or_404(Note, id=id)
     if request.method == "POST":
         form = NoteForm(request.POST, instance=notes)
         if form.is_valid():
             form.save()
-            return redirect("show_notes", task=name)
+            return redirect("show_notes", id=id)
     else:
         form = NoteForm(instance=notes)
     context = {

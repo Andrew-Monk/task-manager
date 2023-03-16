@@ -1,4 +1,5 @@
 from django import forms
+
 from notes.models import Note
 
 
@@ -9,5 +10,4 @@ class NoteForm(forms.ModelForm):
             "title",
             "notes",
             "date",
-            "task"
         ]
