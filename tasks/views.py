@@ -3,8 +3,17 @@ from django.contrib.auth.decorators import login_required
 from tasks.forms import TaskForm
 from tasks.models import Task
 from notes.models import Note
+from django.http import HttpResponseRedirect
 
-# Create your views here.
+# Create your views here
+
+
+@login_required
+def toggle_task_completion(request, task_id):
+    task = Task.objects.get(id=task_id, assignee=request.user)
+    task.is_completed = not task.is_completed
+    task.save()
+    return HttpResponseRedirect(request.META.get("HTTP_REFERER", "/"))
 
 
 @login_required

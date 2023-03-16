@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "notes.apps.NotesConfig",
+    "contacts.apps.ContactsConfig",
     "accounts.apps.AccountsConfig",
     "projects.apps.ProjectsConfig",
     "tasks.apps.TasksConfig",

@@ -1,5 +1,9 @@
 from django import forms
+<<<<<<< HEAD
 from projects.models import Project, Survey
+=======
+from projects.models import Project, Feedback
+>>>>>>> d60cb2c8d28351eac8b4cd82d2329014e9c6dc38
 
 
 class ProjectForm(forms.ModelForm):
@@ -11,17 +15,18 @@ class ProjectForm(forms.ModelForm):
             "owner",
         ]
 
-
-class SurveyForm(forms.ModelForm):
+class FeedbackForm(forms.ModelForm):
     class Meta:
-        model = Survey
+        model = Feedback
         fields = [
-            "name",
-            "email",
-            "feedback",
-            "general_feedback",
+            'name',
+            'email',
+            'generalfb',
+            'promotion',
         ]
-
         labels = {
-            "general_feedback": "Would you like to receive promotional newsletter?",
+            'name': 'Name',
+            'email': 'Email',
+            'generalfb': 'Feedback',
+            'promotion': 'Would you be interested in receiving newsletters about our product and other promotional deals?',
         }

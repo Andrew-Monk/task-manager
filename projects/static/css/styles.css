@@ -476,4 +476,132 @@ footer {
 .image {
   height: 40px;
   width: 40px;
+.rps-p {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.rps-h1 {
+  font-size: 2rem;
+  color: #000000;
+}
+
+.rps-button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.rps-button:hover {
+  background-color: #45a049;
+}
+
+.rps-h2 {
+  font-size: 1.5rem;
+  color: #000000;
+}
+
+
+
+.num-guess-body {
+  background-color: #ffffff;
+  color: #000000;
+  text-align: center;
+  padding-left: 10%;
+}
+
+.num-guess-h1 {
+  font-family: Arial, sans-serif;
+  font-size: 2rem;
+}
+
+.num-guess-p, .num-guess-p1 {
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+}
+
+.num-guess-input {
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  padding: 5px;
+}
+
+.num-guess-button {
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  background-color: #f0f0f0;
+  border: 1px solid #cccccc;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.num-guess-button:hover {
+  background-color: #e0e0e0;
+}
+
+
+.login-form p{
+  color: rgb(24, 21, 21);
+}
+
+.flappy-title {
+  color: rgb(23, 13, 13);
+}
+
+
+.contacts-list {
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 22px;
+    grid-row-gap: 23px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.contacts-title {
+    font-size: 2.5rem;
+    color: #174c4f;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.contacts-image {
+    border-radius: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contacts-image:hover {
+    position: relative;
+    top: -5px;
+}
+
+.contacts-right {
+    text-align: center;
+}
+
+.list-contacts-h1 {
+    font-size: 2.5rem;
+    color: #174C4F;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+h3, h4 {
+    color: #174C4F;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
