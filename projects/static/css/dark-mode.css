@@ -308,7 +308,6 @@ a {
     height: 100%; /* Adjust the height according to your preference */
 }
 
-<<<<<<< HEAD
 .show-project-main {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #eee;
@@ -579,7 +578,6 @@ a {
   .flappy-title {
     color: #f1f1f1;;
   }
-=======
 .contacts-list {
     display:grid;
     grid-template-columns: repeat(4, 1fr);
@@ -628,4 +626,3 @@ h3, h4 {
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
->>>>>>> ricky
