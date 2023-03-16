@@ -57,7 +57,7 @@
                 <div class="base-color-yellow">Copyright 2023</div>
                 <div class="base-color-yellow">Task Manager<br>Hack Reactor</div>
                 <div class="base-color-yellow">
-                    <p>Contact us in room 16 for business propositions</p>
+                    <p><a href="{% url 'list_contacts' %}">Meet the team!</a></p>
                     {% if user.is_authenticated %}
                         <p><a href="{% url 'feedback' %}">Feedback Form</a></p>
                     {% endif %}
