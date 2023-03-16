@@ -16,3 +16,10 @@ class Project(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Feedback(models.Model):
+    name = models.CharField(max_length=200)
+    email = models.EmailField()
+    generalfb = models.TextField()
+    promotion = models.BooleanField(default=False)
