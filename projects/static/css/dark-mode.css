@@ -15,6 +15,7 @@ body {
     margin: 0;
 }
 
+
 .base-nav-bar {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -572,7 +573,7 @@ a {
 }
 
 .div.cell {
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
   .flappy-title {
@@ -625,4 +626,11 @@ h3, h4 {
     text-align: center;
     margin-top: 2rem;
     margin-bottom: 2rem;
+}
+
+body {
+    background-color: #121212;
+    background-size: cover;
+    background-image: url(https://4kwallpapers.com/images/walls/thumbs_3t/8324.png);
+
 }

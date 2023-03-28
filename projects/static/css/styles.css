@@ -6,14 +6,28 @@ html {
     height: 100%
 }
 
+
 body {
+    background-color: #F2F2F0;
+    background-image: url(https://images.pexels.com/photos/4057659/pexels-photo-4057659.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    margin: 0;
+}
+
+
+
+/* body {
     background-color: #F2F2F0;
 
     display: flex;
     flex-direction: column;
     min-height: 100%;
     margin: 0;
-}
+} */
 
 .base-nav-bar {
     display: grid;
