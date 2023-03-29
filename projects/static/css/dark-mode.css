@@ -626,3 +626,7 @@ h3, h4 {
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
+
+.signup-form p {
+    color: #f1f1f1;
+}
